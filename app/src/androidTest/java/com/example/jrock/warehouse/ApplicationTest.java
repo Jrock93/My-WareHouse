@@ -1,4 +1,4 @@
-package com.example.jrock.mywarehouse;
+package com.example.jrock.warehouse;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

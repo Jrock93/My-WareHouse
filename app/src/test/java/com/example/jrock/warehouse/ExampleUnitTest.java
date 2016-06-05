@@ -1,4 +1,4 @@
-package com.example.jrock.mywarehouse;
+package com.example.jrock.warehouse;
 
 import org.junit.Test;
 
