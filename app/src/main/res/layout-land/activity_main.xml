@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <fragment
-        android:layout_width="184dp"
+        android:layout_width="165dp"
         android:layout_height="match_parent"
         android:name="com.example.jrock.warehouse.Fragment1"
         android:id="@+id/fragment4"
