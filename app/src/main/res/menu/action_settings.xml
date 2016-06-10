@@ -11,15 +11,23 @@
 
     <item
         android:id="@+id/add_produc"
-        android:orderInCategory="98"
-        android:showAsAction="always"
-        android:icon="@drawable/ic_add"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_input_get"
         android:title="Añadir Articulo"
         />
 
     <item
+        android:id="@+id/action_limpiar"
+        android:orderInCategory="1"
+        android:showAsAction="never"
+        android:icon="@android:drawable/ic_menu_rotate"
+        android:title="Elminar Registros"
+        />
+
+    <item
         android:id="@+id/op_buscar"
-        android:orderInCategory="99"
+        android:orderInCategory="1"
         android:showAsAction="ifRoom"
         android:icon="@drawable/ic_buscar"
         android:title="Buscar"

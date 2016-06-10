@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_Editar"
+        android:title="Editar"
+        />
+
+    <item
+        android:id="@+id/action_Eliminar"
+        android:title="Eliminar"
+        />
+
+    <item
+        android:id="@+id/action_Detalles"
+        android:title="Detalles"
+        />
 
 </menu>

@@ -19,6 +19,24 @@
         android:textColor="@color/accent_material_light" />
 
     <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:text="New Text"
+            android:id="@+id/desP"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12dp"
+            android:shadowColor="@color/colorPrimary"
+            android:textColor="@color/accent_material_dark"
+            android:paddingLeft="25dp"
+            android:maxLines="2" />
+    </LinearLayout>
+
+    <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -78,4 +96,5 @@
         </LinearLayout>
 
     </LinearLayout>
+
 </LinearLayout>

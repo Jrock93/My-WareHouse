@@ -43,6 +43,7 @@ public class Adaptador extends BaseAdapter {
     public static class Fila
     {
         TextView txtNombre;
+        TextView textDesc;
         TextView txtExistencias;
         TextView txtPrecio;
     }
@@ -59,6 +60,7 @@ Condicional para recrear la vista y no distorcionar el número de elementos
         {
             convertView = inflator.inflate(R.layout.adapter1, parent, false);
             view.txtNombre = (TextView) convertView.findViewById(R.id.nombreP);
+            view.textDesc = (TextView)convertView.findViewById(R.id.desP);
             view.txtExistencias = (TextView) convertView.findViewById(R.id.existvalor);
             view.txtPrecio = (TextView) convertView.findViewById(R.id.valorprecio);
             convertView.setTag(view);
@@ -70,6 +72,7 @@ Condicional para recrear la vista y no distorcionar el número de elementos
 
 // Se asigna el dato proveniente del objeto TitularItems
         view.txtNombre.setText(itm.getNombre());
+        view.textDesc.setText("+ "+itm.getDesc());
         view.txtExistencias.setText(String.valueOf(itm.getExistencias()));
         view.txtPrecio.setText("C$ "+ Double.toString(itm.getPrecio()));
 // Retornamos la vista

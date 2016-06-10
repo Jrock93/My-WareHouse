@@ -5,20 +5,23 @@ package com.example.jrock.warehouse;
  */
 public class ItemsT {
     String nombre; // Título del item
-
+    String desc;
     int existencias; // Descripción del item
     double precio; // Imagen del ítem
     // Constructor por defecto de la clase
     public ItemsT(){}
     // Constructor con parámetros para inicializar el item
-    public ItemsT(String nombre,int existencias, double precio){
+    public ItemsT(String nombre,String desc, int existencias, double precio){
         this.nombre = nombre;
+        this.desc = desc;
         this.existencias = existencias;
         this.precio = precio;
     }
     // Aqui inicia el GET y el SET para cada propiedad de la clase
     public String getNombre() { return nombre; }
     public void setNombre(String nombre_) { this.nombre = nombre_; }
+    public String getDesc(){return desc;}
+    public void setDesc(String desc){ this.desc = desc;}
     public int getExistencias() { return this.existencias; }
     public void setExistencias(int existencias) { this.existencias = existencias; }
     public double getPrecio() { return this.precio; }
