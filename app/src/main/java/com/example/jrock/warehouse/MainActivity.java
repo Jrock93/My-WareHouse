@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity{
     ListView productos;
     ListView lista_opciones;
 
@@ -43,15 +43,15 @@ public class MainActivity extends Activity {
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
 
-        MenuInflater infla = getMenuInflater();
+       MenuInflater infla = getMenuInflater();
         switch (v.getId()){
 
             case R.id.listproductos:
-                infla.inflate(R.menu.action_settings,menu);
+                infla.inflate(R.menu.contex_menu,menu);
                 break;
 
             case  R.id.listaop:
-                infla.inflate(R.menu.action_settings,menu);
+                infla.inflate(R.menu.contex_menu,menu);
                 Toast.makeText(this,"Configuraciones",Toast.LENGTH_LONG).show();
                 break;
         }
