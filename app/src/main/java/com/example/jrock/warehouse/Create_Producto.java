@@ -42,7 +42,11 @@ public class Create_Producto extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                db.execSQL("INSERT INTO Productos (codigo,nombre,descripcion,existencias, precio) VALUES (35,'"+
+                if (nombre.length()==0){
+                    Toast.makeText(v.getContext(), "You did not enter a username", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                db.execSQL("INSERT INTO Productos (nombre,descripcion,existencias, precio) VALUES ('"+
                 nombre.getText()+"','"+descripcion.getText()+"',"+existencias.getText()+","+
                         precio.getText()+")"
                 );

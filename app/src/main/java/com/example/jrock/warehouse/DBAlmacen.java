@@ -9,8 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBAlmacen extends SQLiteOpenHelper {
 
-    String sqlCreate = "CREATE TABLE Productos (codigo INTEGER, nombre TEXT,descripcion TEXT, existencias INTEGER, precio REAL)";
+    String sqlCreate = "CREATE TABLE Productos (codigo INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT,descripcion TEXT, existencias INTEGER, precio REAL)";
     String sqlUpgrade = "CREATE TABLE Productos (codigo INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT,descripcion TEXT, existencias INTEGER, precio REAL)";
+
 
     public DBAlmacen(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
 
@@ -27,7 +28,7 @@ public class DBAlmacen extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //aqui pondriamos si quisieramos actualizar nuestra base de datos
-        db.execSQL("DROP TABLE IF EXISTS productos");
+        db.execSQL("DROP TABLE IF EXISTS Productos");
         db.execSQL(sqlUpgrade);
     }
 }

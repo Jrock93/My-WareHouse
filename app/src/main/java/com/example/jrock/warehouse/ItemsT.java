@@ -6,12 +6,14 @@ package com.example.jrock.warehouse;
 public class ItemsT {
     String nombre; // Título del item
     String desc;
+    int codigo;
     int existencias; // Descripción del item
     double precio; // Imagen del ítem
     // Constructor por defecto de la clase
     public ItemsT(){}
     // Constructor con parámetros para inicializar el item
-    public ItemsT(String nombre,String desc, int existencias, double precio){
+    public ItemsT(int codigo, String nombre,String desc, int existencias, double precio){
+        this.codigo= codigo;
         this.nombre = nombre;
         this.desc = desc;
         this.existencias = existencias;
@@ -26,4 +28,6 @@ public class ItemsT {
     public void setExistencias(int existencias) { this.existencias = existencias; }
     public double getPrecio() { return this.precio; }
     public void setPrecio(int precio) { this.precio = precio; }
+    public void setCodigo(int codigo){this.codigo = codigo;}
+    private int getCodigo(){return this.codigo;}
 }

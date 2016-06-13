@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.example.jrock.warehouse.Create_Producto"
-   >
+    android:background="@android:color/transparent">
 
     <ScrollView
         android:layout_width="match_parent"

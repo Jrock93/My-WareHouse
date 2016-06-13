@@ -30,8 +30,10 @@ public class Fragment2 extends Fragment {
     ListView productos;
     private ArrayList<ItemsT> Items;
     private Adaptador Adaptador;
+
     DBAlmacen bdalmacen;
     SQLiteDatabase db;
+
     @TargetApi(Build.VERSION_CODES.M)
     @Nullable
     @Override
@@ -40,6 +42,8 @@ public class Fragment2 extends Fragment {
         view = inflater.inflate(R.layout.fragmento2, container);
 
         productos = (ListView)view.findViewById(R.id.listproductos);
+
+
         bdalmacen= new DBAlmacen(this.getContext(),"DBAlmacen",null,1) ;
         db = bdalmacen.getWritableDatabase();
         loadItems();
@@ -65,14 +69,14 @@ public class Fragment2 extends Fragment {
                 Integer exis = c.getInt(3);
                 Double precio = c.getDouble(4);
 
-                Items.add(new ItemsT(nombre,desc,exis,precio));
+                Items.add(new ItemsT(codigo,nombre,desc,exis,precio));
             }while (c.moveToNext());
 
         }
         //
         //Creamos un nuevo Adaptador y le pasamos el ArrayList
 
-        Adaptador = new Adaptador(this, Items);
+        Adaptador = new Adaptador(this.getContext(), Items);
 
 // Desplegamos los elementos en el ListView
         productos.setAdapter(Adaptador);
@@ -84,4 +88,7 @@ public class Fragment2 extends Fragment {
         super.onStart();
         loadItems();
     }
+
+
+
 }

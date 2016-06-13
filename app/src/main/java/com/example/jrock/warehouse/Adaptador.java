@@ -1,6 +1,7 @@
 package com.example.jrock.warehouse;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +16,15 @@ import java.util.ArrayList;
  */
 public class Adaptador extends BaseAdapter {
 
-
-    private Fragment2 activity; //Activity desde el cual se hace referencia al llenado de la lista
+    LayoutInflater inflater;
     private ArrayList<ItemsT> arrayItems; // Lista de items
+    private Context contexto;
     // Constructor con parámetros que recibe la Acvity y los datos de los items.
-    public Adaptador(Fragment2 activity, ArrayList<ItemsT> listaItems){
+    public Adaptador(Context activity, ArrayList<ItemsT> listaItems){
         super();
-        this.activity = activity;
-        this.arrayItems = new ArrayList<ItemsT>(listaItems);
+        this.contexto = activity;
+        inflater=LayoutInflater.from(activity);
+        this.arrayItems = listaItems;
     }
 
     @Override
@@ -40,42 +42,22 @@ public class Adaptador extends BaseAdapter {
         return position;
     }
 
-    public static class Fila
-    {
-        TextView txtNombre;
-        TextView textDesc;
-        TextView txtExistencias;
-        TextView txtPrecio;
-    }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Fila view = new Fila();
-        LayoutInflater inflator = activity.getActivity().getLayoutInflater();
-        ItemsT itm = arrayItems.get(position);
-/*
-Condicional para recrear la vista y no distorcionar el número de elementos
-*/
-        if(convertView==null)
-        {
-            convertView = inflator.inflate(R.layout.adapter1, parent, false);
-            view.txtNombre = (TextView) convertView.findViewById(R.id.nombreP);
-            view.textDesc = (TextView)convertView.findViewById(R.id.desP);
-            view.txtExistencias = (TextView) convertView.findViewById(R.id.existvalor);
-            view.txtPrecio = (TextView) convertView.findViewById(R.id.valorprecio);
-            convertView.setTag(view);
-        }
-        else
-        {
-            view = (Fila)convertView.getTag();
-        }
 
-// Se asigna el dato proveniente del objeto TitularItems
-        view.txtNombre.setText(itm.getNombre());
-        view.textDesc.setText("+ "+itm.getDesc());
-        view.txtExistencias.setText(String.valueOf(itm.getExistencias()));
-        view.txtPrecio.setText("C$ "+ Double.toString(itm.getPrecio()));
-// Retornamos la vista
+        convertView = inflater.inflate(R.layout.adapter1, null);
+        ItemsT itm = arrayItems.get(position);
+        TextView nombre = (TextView) convertView.findViewById(R.id.nombreP);
+        TextView descripcion= (TextView) convertView.findViewById(R.id.desP);
+        TextView existencias = (TextView) convertView.findViewById(R.id.existvalor);
+        TextView precio =(TextView)convertView.findViewById(R.id.valorprecio);
+
+        nombre.setText(itm.getNombre());
+        descripcion.setText(itm.getDesc());
+        existencias.setText(String.valueOf(itm.getExistencias()));
+        precio.setText(String.valueOf(itm.getPrecio()));
+
+
         return convertView;
     }
 }
