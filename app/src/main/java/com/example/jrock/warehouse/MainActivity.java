@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity{
                 switch (position){
                     case 0:
                         Toast.makeText(view.getContext(),"Vender",Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(MainActivity.this, VentaP.class);
+                        startActivity(i);
+
                         break;
                     case 1:
                         Toast.makeText(view.getContext(),"Comprar",Toast.LENGTH_SHORT).show();
@@ -86,9 +89,6 @@ public class MainActivity extends AppCompatActivity{
         switch (v.getId()){
 
             case R.id.listproductos:
-
-
-
 
                 infla.inflate(R.menu.contex_menu,menu);
                // Toast.makeText(this,"Configuraciones",Toast.LENGTH_LONG).show();
