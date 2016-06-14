@@ -81,11 +81,12 @@ public class MainActivity extends AppCompatActivity{
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         TextView etiqueta = null;
-        ItemsT objeto;
+
         MenuInflater infla = getMenuInflater();
         switch (v.getId()){
 
             case R.id.listproductos:
+
 
 
 
