@@ -44,6 +44,7 @@ public class Fragment2 extends Fragment {
         productos = (ListView)view.findViewById(R.id.listproductos);
 
 
+
         bdalmacen= new DBAlmacen(this.getContext(),"DBAlmacen",null,1) ;
         db = bdalmacen.getWritableDatabase();
         loadItems();

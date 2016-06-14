@@ -26,11 +26,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
     ListView productos;
     ListView lista_opciones;
     DBAlmacen bdalmacen;
     SQLiteDatabase db;
+    ItemsT miObjeto;
     int posi;
 
 
@@ -47,6 +48,13 @@ public class MainActivity extends AppCompatActivity{
         lista_opciones =(ListView)findViewById(R.id.listaop);
         registerForContextMenu(productos);
         registerForContextMenu(lista_opciones);
+
+        productos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(MainActivity.this,"click"+position,Toast.LENGTH_LONG).show();
+            }
+        });
 
         lista_opciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -92,11 +100,15 @@ public class MainActivity extends AppCompatActivity{
                 productos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Toast.makeText(view.getContext(),"click"+position,Toast.LENGTH_LONG).show();
+                        miObjeto= (ItemsT) productos.getAdapter().getItem(position);
+                        Toast.makeText(MainActivity.this,"Por aqui",Toast.LENGTH_SHORT);
+
                     }
                 });
+                miObjeto= (ItemsT) productos.getAdapter().getItem(1);
 
-                menu.setHeaderTitle("Aqui quiero que valla el nombre");
+
+                menu.setHeaderTitle(miObjeto.getNombre());
                 infla.inflate(R.menu.contex_menu,menu);
                 break;
             case  R.id.listaop:
@@ -170,6 +182,7 @@ public class MainActivity extends AppCompatActivity{
                 return super.onOptionsItemSelected(item);
         }
     }
+
 
 
 }
