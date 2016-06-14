@@ -11,5 +11,6 @@
         android:layout_gravity="center_horizontal"
         android:longClickable="true"
         style="@android:style/Widget.AbsListView"
-        android:background="@android:color/white" />
+        android:background="@android:color/white"
+        android:clickable="true" />
 </LinearLayout>

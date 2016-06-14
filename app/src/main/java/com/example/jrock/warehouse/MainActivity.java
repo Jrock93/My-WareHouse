@@ -72,13 +72,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        productos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-             posi=position;
-                Toast.makeText(view.getContext(),"click",Toast.LENGTH_LONG).show();
-            }
-        });
+
     }
 
     @Override
@@ -95,6 +89,13 @@ public class MainActivity extends AppCompatActivity{
         switch (v.getId()){
 
             case R.id.listproductos:
+                productos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Toast.makeText(view.getContext(),"click"+position,Toast.LENGTH_LONG).show();
+                    }
+                });
+
                 menu.setHeaderTitle("Aqui quiero que valla el nombre");
                 infla.inflate(R.menu.contex_menu,menu);
                 break;
