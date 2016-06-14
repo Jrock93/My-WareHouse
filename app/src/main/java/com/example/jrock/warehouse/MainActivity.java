@@ -83,6 +83,11 @@ public class MainActivity extends AppCompatActivity{
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
+
+
+        //Aqui es donde manojo el evento que genera el menu contextual ...
+
+
         TextView etiqueta = null;
 
         MenuInflater infla = getMenuInflater();
@@ -91,7 +96,6 @@ public class MainActivity extends AppCompatActivity{
             case R.id.listproductos:
 
                 infla.inflate(R.menu.contex_menu,menu);
-               // Toast.makeText(this,"Configuraciones",Toast.LENGTH_LONG).show();
                 break;
             //case  R.id.listaop:
               //  Toast.makeText(this,"Configuraciones",Toast.LENGTH_LONG).show();
