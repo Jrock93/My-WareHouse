@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
              posi=position;
+                Toast.makeText(MainActivity.this,"click",Toast.LENGTH_LONG).show();
             }
         });
     }
