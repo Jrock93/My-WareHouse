@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
              posi=position;
-                Toast.makeText(MainActivity.this,"click",Toast.LENGTH_LONG).show();
+                Toast.makeText(view.getContext(),"click",Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -95,12 +95,12 @@ public class MainActivity extends AppCompatActivity{
         switch (v.getId()){
 
             case R.id.listproductos:
-
+                menu.setHeaderTitle("Aqui quiero que valla el nombre");
                 infla.inflate(R.menu.contex_menu,menu);
                 break;
-            //case  R.id.listaop:
-              //  Toast.makeText(this,"Configuraciones",Toast.LENGTH_LONG).show();
-                //break;
+            case  R.id.listaop:
+                Toast.makeText(this,"Configuraciones",Toast.LENGTH_LONG).show();
+                break;
         }
     }
 
@@ -108,6 +108,8 @@ public class MainActivity extends AppCompatActivity{
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         return super.onContextItemSelected(item);
+
+
 
     }
 
